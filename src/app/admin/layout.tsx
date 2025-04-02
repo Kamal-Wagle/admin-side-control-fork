@@ -120,14 +120,17 @@
 
 
 ///
+
+
 'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Coffee, Package, Tag, Users, Plus, Home, LogOut, UserCog, ChevronRight, ChevronLeft } from "lucide-react"
+import { Coffee, Package, Tag, Users, Plus, Home,  UserCog, ChevronRight, ChevronLeft } from "lucide-react"
 import { cn } from '@/lib/utils';
+import Logout from '@/components/Logout';
 
 const sidebarItems = [
   { label: "Dashboard", href: "/admin", icon: Home },
@@ -147,9 +150,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const [collapsed, setCollapsed] = useState(false);
   const pathname = usePathname();
 
-  const logout = () => {
-
-  };
+  
 
   return (
     <div className="min-h-screen bg-background">
@@ -197,20 +198,21 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <div className="flex flex-col gap-2">
             {/* <div className="flex items-center gap-2 px-3 py-2 text-sm">
               <div className="flex-1 truncate">
-                <p className="font-medium">admin</p>
                 <p className="text-xs text-muted-foreground capitalize">admin</p>
               </div>
             </div> */}
-            <Button variant="outline" className="w-full flex items-center" onClick={logout}>
-              <LogOut className="mr-2 h-4 w-4" />
-              {!collapsed && <span>Logout</span>}
-            </Button>
-            <Button variant="outline" className="w-full flex items-center" asChild>
+
+
+           
+            {/* View Website Url */}
+             <Button variant="outline" className="w-full flex items-center" asChild>
               <Link href="/">
                 <Coffee className="mr-2 h-4 w-4" />
                 {!collapsed && <span>View Website</span>}
               </Link>
             </Button>
+
+           
           </div>
         </div>
       </div>
@@ -224,10 +226,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       >
         <header className="h-16 border-b bg-card flex items-center justify-between px-6">
           <h2 className="font-semibold">Modern Restaurant</h2>
-          <Button variant="ghost" size="sm" onClick={logout}>
-            <LogOut className="w-4 h-4 mr-2" />
-            Log Out
-          </Button>
+              
+               <Logout/>
+             
         </header>
         <main className="p-6">{children}</main>
       </div>
