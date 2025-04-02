@@ -26,7 +26,7 @@ export default function MenuPage() {
     queryKey: ["menu-items"], // Unique key for the query
     queryFn: async () => {
       const response = await $axios.get("/api/menu"); // GET request to fetch menu items
-      return response.data; // Return the fetched data
+      return response?.data?.menuItems; // Return the fetched data
     },
   };
 
