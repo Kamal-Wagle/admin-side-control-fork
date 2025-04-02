@@ -12,7 +12,6 @@ const navItems = [
   { name: "Gallery", href: "/gallery" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
-   { name: "Admin", href: "/admin" },
 ]
 
 export default function Navbar() {
@@ -76,7 +75,9 @@ export default function Navbar() {
               </Link>
             ))}
             <Button className="w-full mt-2 bg-luxury-gold hover:bg-luxury-silver text-luxury-charcoal transition-colors duration-300">
-              Reserve
+              <Link href="/Admin"">
+              Admin Access
+            </Link>
             </Button>
           </div>
         </div>
