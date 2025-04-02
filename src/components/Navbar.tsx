@@ -75,9 +75,9 @@ export default function Navbar() {
               </Link>
             ))}
             <Button className="w-full mt-2 bg-luxury-gold hover:bg-luxury-silver text-luxury-charcoal transition-colors duration-300">
-              <Link href="/Admin"">
+             <Link href="/admin">
               Admin Access
-            </Link>
+              </Link>
             </Button>
           </div>
         </div>
