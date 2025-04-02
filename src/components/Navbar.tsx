@@ -45,9 +45,11 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
-              <Button className="bg-luxury-gold hover:bg-luxury-silver text-luxury-charcoal transition-colors duration-300">
-                Reserve
-              </Button>
+              <Button className="w-full mt-2 bg-luxury-gold hover:bg-luxury-silver text-luxury-charcoal transition-colors duration-300">
+             <Link href="/admin">
+              Admin Access
+              </Link>
+            </Button>
             </div>
           </div>
           <div className="md:hidden">
